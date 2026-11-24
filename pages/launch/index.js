@@ -1,0 +1,1 @@
+Page({ onLoad() { this.timer = setTimeout(() => wx.switchTab({ url: '/pages/home/index' }), 800); }, onUnload() { clearTimeout(this.timer); }, skip() { clearTimeout(this.timer); wx.switchTab({ url: '/pages/home/index' }); } });

@@ -1,0 +1,7 @@
+<view class="page home"><view class="content">
+  <view class="brand-row"><image class="brand" src="/assets/bubupie-wordmark.png" mode="aspectFit" aria-label="布布小伴 BUBU PIE" /><text>给喜欢留个位置</text></view>
+  <view class="heading"><text class="home-title">我的伙伴</text><button class="edit" bindtap="edit">编辑</button></view>
+  <view class="grid"><button class="ip-card" wx:for="{{collection}}" wx:key="id" data-id="{{item.id}}" bindtap="openCharacter" aria-label="查看{{item.name}}的今日运势"><text class="card-name">{{item.name}}</text><text class="card-sub">{{item.edition}}</text><view class="card-stage"><image wx:if="{{item.id === 'star' ? quanzhouScene : false}}" class="card-scenery" src="/assets/quanzhou-gucuo-lines.png" mode="aspectFit" aria-hidden="true" /><dress-avatar wx:if="{{hasDress}}" class="card-image card-cutout" layers="{{dressLayers}}" /><image wx:else class="card-image card-cutout" src="{{item.image}}" mode="aspectFit" /></view><text class="card-action">看看今天的心情 <text>›</text></text></button></view>
+  <view wx:if="{{!collection.length}}" class="companions-empty"><view>把第一个伙伴，带进日常。</view><text>去商城认识它，再从这里开始陪伴。</text><button bindtap="openShop">去逛商城 ›</button></view>
+  <view wx:if="{{collection.length}}" class="collection-note">{{collection.length}}位伙伴，陪你慢慢收藏日常。</view>
+</view></view>

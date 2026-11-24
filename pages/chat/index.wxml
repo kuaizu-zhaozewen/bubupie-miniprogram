@@ -1,0 +1,11 @@
+<view class="chat-page">
+  <view class="chat-status"><view class="status-dot"></view><text>湾月今天{{daily.label}}</text><text class="status-date">{{daily.date}}</text></view>
+  <scroll-view scroll-y="{{true}}" class="messages" scroll-into-view="{{scrollTarget}}" scroll-with-animation="{{true}}"><view class="messages-content">
+    <block wx:for="{{messages}}" wx:key="id">
+      <view id="message-{{item.id}}" class="message-row {{item.role}}"><image wx:if="{{item.role === 'friend'}}" class="chat-avatar friend-avatar" src="{{characterImage}}" mode="aspectFill" /><view class="message-column"><text class="message-author">{{item.role === 'friend' ? '湾月' : userName}}</text><view class="bubble">{{item.text}}</view></view><image wx:if="{{item.role === 'user'}}" class="chat-avatar user-avatar" src="{{userAvatar}}" mode="aspectFill" /></view>
+      <view wx:if="{{index === 0}}" class="quick-prompts"><view class="prompt-title">从一个小问题开始</view><button wx:for="{{prompts}}" wx:for-item="prompt" wx:key="id" class="prompt" data-id="{{prompt.id}}" bindtap="choose"><text>{{prompt.text}}</text><text class="prompt-arrow">↗</text></button></view>
+    </block>
+    <view class="chat-end" id="chat-end"></view>
+  </view></scroll-view>
+  <view class="composer-area"><view class="composer"><input placeholder="和湾月说点什么…" maxlength="500" value="{{input}}" bindinput="input" confirm-type="send" bindconfirm="send" adjust-position="{{true}}" cursor-spacing="20" /><button bindtap="send" disabled="{{!input}}" aria-label="发送">↑</button></view><view class="chat-demo-note">湾月的生活小灵感 · 本地情境演示</view></view>
+</view>

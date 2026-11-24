@@ -1,0 +1,15 @@
+<view class="shop-page">
+  <view class="shop-content">
+    <view class="store-toolbar"><image class="store-logo" src="/assets/bubupie-wordmark.png" mode="aspectFit" /><button class="bag-link" bindtap="bag" aria-label="打开购物袋">购物袋 <text wx:if="{{bagCount}}">{{bagCount}}</text><text class="small-arrow">↗</text></button></view>
+    <view class="store-heading">好物，刚刚好。</view><view class="store-subtitle">给喜欢留个位置。</view>
+    <view class="search-box"><text class="search-symbol">⌕</text><input placeholder="搜索好物，或输入推广关键词领券" value="{{query}}" bindinput="input" bindconfirm="search" confirm-type="search" maxlength="60" /><button wx:if="{{query}}" class="clear-search" bindtap="clearSearch" aria-label="清空搜索">×</button><button class="search-submit" bindtap="search">搜索</button></view>
+    <button class="coupon-entry" bindtap="coupons"><view><text class="coupon-entry-title">我的优惠券</text><text class="coupon-entry-note">{{availableCount ? availableCount + '张可用 · 选好物时自动抵扣' : '搜索推广关键词，领取今日好礼'}}</text></view><text class="blue-arrow">›</text></button>
+    <view wx:if="{{notice}}" class="search-notice"><view class="notice-title">{{promotion ? (promotion.fresh ? '专属好礼已到账' : '今日好礼已领取') : notice}}</view><view wx:if="{{promotion}}" class="notice-description">{{notice}}，可在“我的优惠券”查看。</view><button wx:if="{{promotion}}" bindtap="coupons">查看优惠券 ›</button></view>
+    <view class="category-heading"><text>逛逛分类</text><button class="all-categories {{category === 'all' ? 'active' : ''}}" data-id="all" bindtap="selectCategory">全部好物 ›</button></view>
+    <view class="category-grid"><button wx:for="{{categories}}" wx:key="id" class="category-card {{category === item.id ? 'selected' : ''}}" data-id="{{item.id}}" bindtap="selectCategory"><image src="{{item.image}}" mode="aspectFit" /><view><text class="category-name">{{item.name}}</text><text class="category-subtitle">{{item.subtitle}}</text></view></button></view>
+    <view class="section-heading"><view>{{sectionTitle}}</view><text>{{count}}件好物</text></view>
+    <view wx:if="{{enabled}}" class="product-grid"><button wx:for="{{products}}" wx:key="id" class="product-card" data-id="{{item.id}}" bindtap="product" aria-label="查看{{item.name}}详情"><view class="product-image-wrap"><image src="{{item.image}}" mode="aspectFit" /></view><view class="product-card-copy"><text class="product-badge">{{item.badge}}</text><text class="product-title">{{item.name}}</text><text class="product-subtitle">{{item.subtitle}}</text><text class="product-more">进一步了解 <text>›</text></text></view></button></view>
+    <view wx:if="{{!count}}" class="search-empty"><view>还没找到这件好物。</view><text>试试“海风”“手账”或其他商品名称。</text><button data-id="all" bindtap="selectCategory">看看全部好物 ›</button></view>
+    <view class="store-footer"><text>概念商城 · 商品与价格用于本地体验</text><button bindtap="distributor">合作伙伴工作台 ›</button><button wx:if="{{enabled}}" bindtap="toggleTools">演示设置</button><view wx:if="{{showTools}}"><text>当前买家：{{buyer}}</text><button bindtap="switchBuyer">切换演示买家 A / B</button><text>试搜：海风小店 / 巷口伙伴 / 湾月好礼</text></view></view>
+  </view>
+</view>

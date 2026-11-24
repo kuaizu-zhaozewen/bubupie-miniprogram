@@ -1,0 +1,22 @@
+const assert = require('assert');
+const path = require('path');
+const storage = {}, nav = [];
+let page;
+global.wx = { getStorageSync: k => storage[k], setStorageSync: (k,v) => { storage[k]=v; }, navigateTo: v=>nav.push(v.url), redirectTo:v=>nav.push(v.url), reLaunch:v=>nav.push(v.url), navigateBack:()=>{}, showToast:()=>{}, showModal:o=>o.success&&o.success({confirm:true}), showShareMenu:()=>{}, scanCode:o=>o.success({result:'TAMI-DEMO'}) };
+global.Page = def => { page=def; page.data=JSON.parse(JSON.stringify(def.data)); page.setData=function(p){Object.assign(this.data,p);}; };
+const load=f=>{const name=path.resolve(__dirname,'..',f);delete require.cache[name];require(name);return page;};
+const daily=require('../utils/daily');
+assert.strictEqual(daily.getDaily('star').id,daily.getDaily('star').id);
+assert.strictEqual(daily.getDaily('star','low').mood,'low');
+assert(daily.getDaily('star','low').quote.includes('吃饭'));
+assert(daily.getDaily('star','high').score>daily.getDaily('star','low').score);
+let home=load('pages/home/index.js'); home.onShow();home.openCharacter({currentTarget:{dataset:{id:'star'}}});assert.strictEqual(nav.pop(),'/pages/fortune/index?id=star&demo=1&role=owner');assert(!daily.isAdopted('star'));let shelfFortune=load('pages/fortune/index.js');shelfFortune.onLoad({id:'star',demo:'1',role:'owner'});assert.strictEqual(shelfFortune.data.item.name,'湾月');assert(shelfFortune.data.daily.id);shelfFortune.dress();assert(nav.pop().startsWith('/pages/character/index?id=star'));let shelfCharacter=load('pages/character/index.js');shelfCharacter.onLoad({id:'star',demo:'1',role:'owner'});assert.strictEqual(shelfCharacter.data.item.name,'湾月');assert.equal(typeof shelfCharacter.fortune,'undefined','wardrobe is not the gateway to fortune');home.testTap();assert(nav.pop().includes('demo=1'));
+let fortune=load('pages/fortune/index.js');fortune.onLoad({id:'star',role:'owner'});assert.strictEqual(nav.pop(),'/pages/card/index?id=star');
+let bind=load('pages/bind/index.js');bind.bindCode('wrong');assert(!daily.isAdopted('star'));bind.bindCode('tami-demo');assert(daily.isAdopted('star'));assert(nav.pop().includes('/pages/card/'));bind.bindCode('TAMI-DEMO');assert.strictEqual(storage.tami_adoptions.length,1);
+fortune=load('pages/fortune/index.js');fortune.onLoad({id:'star'});assert.strictEqual(fortune.data.item.name,'湾月');assert.strictEqual(fortune.data.daily.id,daily.getDaily('star').id);fortune.details();assert(nav.pop().includes('/pages/fortune-detail/'));
+const config=require('../utils/config');
+for(const role of ['guest','owner'])for(const mood of ['low','high']){const card=load('pages/card/index.js');card.renderImages=()=>{};card.onLoad({id:'star',demo:'1'});card.setRole({currentTarget:{dataset:{value:role}}});card.setMood({currentTarget:{dataset:{value:mood}}});assert.strictEqual(card.data.owner,role==='owner');assert.strictEqual(card.data.daily.mood,mood);card.fortune();const dest=nav.pop();assert(dest.includes(role==='owner'?'/pages/fortune/':'/pages/bind/'));const share=card.onShareAppMessage();assert(!share.path.includes('demo=')&&!share.path.includes('role='));assert(!card.onShareTimeline().query.includes('role='));}
+config.enableDemoTools=false;home.openCharacter({currentTarget:{dataset:{id:'star'}}});assert.strictEqual(nav.pop(),'/pages/fortune/index?id=star');let card=load('pages/card/index.js');card.onLoad({demo:'1'});assert(!card.data.testing);config.enableDemoTools=true;
+const legacy=load('pages/wardrobe/index.js');legacy.onLoad();assert.strictEqual(nav.pop(),'/pages/character/index?id=star&bind=1');
+let edit=load('pages/edit-profile/index.js');edit.onLoad();edit.nickname({detail:{value:'小海风'}});edit.birthday({detail:{value:'2001-11-16'}});const oldTimer=global.setTimeout;global.setTimeout=fn=>fn();edit.save();global.setTimeout=oldTimer;assert.strictEqual(storage.mio_profile.birthday,'2001-11-16');let profile=load('pages/profile/index.js');profile.onShow();assert.strictEqual(profile.data.nickname,'小海风');assert(profile.data.birthdayMonth);edit.clearBirthday();assert.strictEqual(edit.data.birthday,'');
+console.log('OK: 4 role/mood cases, adoption/idempotency, permission gate, stable daily content, sharing isolation, birthday and coupon-month display');

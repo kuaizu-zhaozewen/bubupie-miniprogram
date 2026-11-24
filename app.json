@@ -1,0 +1,67 @@
+{
+  "pages": [
+    "pages/launch/index",
+    "pages/home/index",
+    "pages/character/index",
+    "pages/fortune/index",
+    "pages/fortune-detail/index",
+    "pages/shop/index",
+    "pages/bind/index",
+    "pages/profile/index",
+    "pages/edit-profile/index",
+    "pages/personalize/index",
+    "pages/chat/index",
+    "pages/card/index",
+    "pages/wardrobe/index",
+    "pages/distributor/index",
+    "pages/product/index",
+    "pages/bag/index",
+    "pages/coupons/index",
+    "pages/shop-entry/index"
+  ],
+  "window": {
+    "navigationStyle": "default",
+    "backgroundColor": "#f7f7f6",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#F7F7F6",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "布布小伴"
+  },
+  "usingComponents": {
+    "dress-avatar": "/components/dress-avatar/index"
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "color": "#929297",
+    "selectedColor": "#1d1d1f",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "伙伴",
+        "iconPath": "assets/navigation/partner.png",
+        "selectedIconPath": "assets/navigation/partner-selected.png"
+      },
+      {
+        "pagePath": "pages/shop/index",
+        "text": "商城",
+        "iconPath": "assets/navigation/shop.png",
+        "selectedIconPath": "assets/navigation/shop-selected.png"
+      },
+      {
+        "pagePath": "pages/bag/index",
+        "text": "购物袋",
+        "iconPath": "assets/navigation/bag.png",
+        "selectedIconPath": "assets/navigation/bag-selected.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的",
+        "iconPath": "assets/navigation/profile.png",
+        "selectedIconPath": "assets/navigation/profile-selected.png"
+      }
+    ]
+  }
+}

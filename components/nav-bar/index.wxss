@@ -1,0 +1,4 @@
+.nav { background: #f7f7f6; }
+.nav-inner { position: relative; display: flex; align-items: center; justify-content: center; }
+.nav-title { max-width: 52%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 30rpx; font-weight: 700; }
+.back { position: absolute; left: 32rpx; top: 0; height: 100%; width: 64rpx; display: flex; align-items: center; justify-content: center; font-size: 54rpx; font-weight: 300; }

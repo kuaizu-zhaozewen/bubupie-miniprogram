@@ -1,0 +1,9 @@
+/* Quiet Quanzhou linework sits behind the character and never receives taps. */
+.home .card-stage { position:relative; width:100%; height:330rpx; margin-top:12rpx; }
+.home .card-stage .card-image { position:relative; z-index:2; width:100%; height:100%; margin-top:0; }
+.home .card-scenery { position:absolute; z-index:0; width:116%; height:100%; left:-8%; top:0; opacity:.14; pointer-events:none; }
+.wardrobe .stage-lineart { position:absolute; z-index:1; width:100%; height:490rpx; left:0; top:100rpx; opacity:.16; pointer-events:none; }
+.card-page .card-scene { position:relative; height:440rpx; margin:18rpx 0 6rpx; }
+.card-page .card-scene .card-hero { position:relative; z-index:1; width:100%; height:100%; margin:0; }
+.card-page .card-scenery { position:absolute; z-index:0; width:116%; height:100%; left:-8%; top:0; opacity:.12; pointer-events:none; }
+.fortune-scenery { position:absolute; z-index:0; width:100%; height:460rpx; left:0; top:24rpx; opacity:.13; pointer-events:none; }

@@ -1,0 +1,42 @@
+{
+  "description": "布布小伴 BUBU PIE · 湾月 Demo V3.4 · 运势优先与微信原生导航",
+  "projectname": "bubupie-wardrobe-demo",
+  "appid": "wxae0ed268634b88db",
+  "miniprogramRoot": "./",
+  "compileType": "miniprogram",
+  "libVersion": "3.7.0",
+  "setting": {
+    "es6": true,
+    "minified": true,
+    "urlCheck": true
+  },
+  "packOptions": {
+    "ignore": [
+      {
+        "type": "folder",
+        "value": "scripts"
+      },
+      {
+        "type": "file",
+        "value": "README.md"
+      },
+      {
+        "type": "folder",
+        "value": "docs"
+      },
+      {
+        "type": "folder",
+        "value": "assets/wardrobe/sources"
+      },
+      {
+        "type": "file",
+        "value": "assets/tami-wordmark.svg"
+      },
+      {
+        "type": "file",
+        "value": "assets/tami-share-logo.png"
+      }
+    ]
+  },
+  "isGameTourist": false
+}

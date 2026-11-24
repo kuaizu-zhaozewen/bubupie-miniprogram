@@ -1,0 +1,152 @@
+{
+  "method": "built-in imagegen",
+  "date": "2026-11-23",
+  "assets": [
+    {
+      "id": "arcade-top",
+      "folder": "shop-v38",
+      "path": "D:\\IP\\mio-miniprogram\\assets\\shop-v38\\arcade-top.png",
+      "prompt": "Use case: product-mockup, faithful premium material rendering. Image 1 is the existing flat garment design; use it as design reference only. Image 2 is the finished plush toy, use it as material, scale and finish reference. Render this exact toy accessory as a finished, premium three-dimensional studio catalog product, not a flat illustration: Deep teal toy varsity jacket with ivory short sleeves, terracotta and ivory striped ribbed neck and hem, teal center button placket, ivory slanted welt pockets, small rust sailboat and teal wave embroidery on viewer-right chest. Preserve the design. Front three-quarter view with very slight tilt so the full product silhouette is clear. High-quality woven fabric, tiny seams, consistent lighting, subtle self-shadowing, softly rounded toy-scale construction. The whole product must fit comfortably, centered, filling 85% of the frame width, without cropping. No labels, price, typography, hang tags, watermark, extra props or body. Genuinely transparent background with clean alpha edges. Square image. Keep exact original colors and intended garment design.",
+      "referencePaths": [
+        "D:\\IP\\mio-miniprogram\\assets\\shop\\arcade-top.png",
+        "D:\\IP\\mio-miniprogram\\assets\\bayue-floral-cutout.png"
+      ]
+    },
+    {
+      "id": "silk-bottom",
+      "folder": "shop-v38",
+      "path": "D:\\IP\\mio-miniprogram\\assets\\shop-v38\\silk-bottom.png",
+      "prompt": "Use case: product-mockup, faithful premium material rendering. Image 1 is the existing flat garment design; use it as design reference only. Image 2 is the finished plush toy, use it as material, scale and finish reference. Render this exact toy accessory as a finished, premium three-dimensional studio catalog product, not a flat illustration: Indigo denim wide-legged miniature shorts for a plush toy, warm beige double topstitching, structured waistband, clean leg openings, subtle realistic denim weave. Preserve the short, wide toy proportions. Front three-quarter view with very slight tilt so the full product silhouette is clear. High-quality woven fabric, tiny seams, consistent lighting, subtle self-shadowing, softly rounded toy-scale construction. The whole product must fit comfortably, centered, filling 85% of the frame width, without cropping. No labels, price, typography, hang tags, watermark, extra props or body. Genuinely transparent background with clean alpha edges. Square image. Keep exact original colors and intended garment design.",
+      "referencePaths": [
+        "D:\\IP\\mio-miniprogram\\assets\\shop\\silk-bottom.png",
+        "D:\\IP\\mio-miniprogram\\assets\\bayue-floral-cutout.png"
+      ]
+    },
+    {
+      "id": "silk-top",
+      "folder": "shop-v38",
+      "path": "D:\\IP\\mio-miniprogram\\assets\\shop-v38\\silk-top.png",
+      "prompt": "Use case: product-mockup, faithful premium material rendering. Image 1 is the existing flat garment design; use it as design reference only. Image 2 is the finished plush toy, use it as material, scale and finish reference. Render this exact toy accessory as a finished, premium three-dimensional studio catalog product, not a flat illustration: Cream ivory cross-over short-sleeve toy shirt with dark teal diagonal sash, cream folded collar, tiny fabric frog closure, ivory chest patch embroidered with a rust-red Fujian sailboat above teal waves, warm terracotta fine seam stitches. Match the reference garment exactly. Front three-quarter view with very slight tilt so the full product silhouette is clear. High-quality woven fabric, tiny seams, consistent lighting, subtle self-shadowing, softly rounded toy-scale construction. The whole product must fit comfortably, centered, filling 85% of the frame width, without cropping. No labels, price, typography, hang tags, watermark, extra props or body. Genuinely transparent background with clean alpha edges. Square image. Keep exact original colors and intended garment design.",
+      "referencePaths": [
+        "D:\\IP\\mio-miniprogram\\assets\\shop\\silk-top.png",
+        "D:\\IP\\mio-miniprogram\\assets\\bayue-floral-cutout.png"
+      ]
+    },
+    {
+      "id": "teal-shoes",
+      "folder": "shop-v38",
+      "path": "D:\\IP\\mio-miniprogram\\assets\\shop-v38\\teal-shoes.png",
+      "prompt": "Use case: product-mockup, faithful premium material rendering. Image 1 is the existing flat garment design; use it as design reference only. Image 2 is the finished plush toy, use it as material, scale and finish reference. Render this exact toy accessory as a finished, premium three-dimensional studio catalog product, not a flat illustration: A matched pair of miniature deep teal slide slippers for a plush toy. Open toes, broad curved uppers with cream embroidered-looking ocean wave motifs, rounded cream soles, the opening and interior clearly visible. Detailed lightly textured soft matte vinyl, no toy feet inside. Front three-quarter view with very slight tilt so the full product silhouette is clear. High-quality woven fabric, tiny seams, consistent lighting, subtle self-shadowing, softly rounded toy-scale construction. The whole product must fit comfortably, centered, filling 85% of the frame width, without cropping. No labels, price, typography, hang tags, watermark, extra props or body. Genuinely transparent background with clean alpha edges. Square image. Keep exact original colors and intended garment design.",
+      "referencePaths": [
+        "D:\\IP\\mio-miniprogram\\assets\\shop\\teal-shoes.png",
+        "D:\\IP\\mio-miniprogram\\assets\\bayue-floral-cutout.png"
+      ]
+    },
+    {
+      "id": "arcade-bottom",
+      "folder": "shop-v38",
+      "path": "D:\\IP\\mio-miniprogram\\assets\\shop-v38\\arcade-bottom.png",
+      "prompt": "Use case: product-mockup, faithful premium material rendering. Image 1 is the existing flat garment design; use it as design reference only. Image 2 is the finished plush toy, use it as material, scale and finish reference. Render this exact toy accessory as a finished, premium three-dimensional studio catalog product, not a flat illustration: Sand beige miniature cargo shorts for a plush toy, small side cargo pocket on viewer-right leg, muted teal double stitching, softly structured cotton twill and elastic waistband. Preserve the design. Front three-quarter view with very slight tilt so the full product silhouette is clear. High-quality woven fabric, tiny seams, consistent lighting, subtle self-shadowing, softly rounded toy-scale construction. The whole product must fit comfortably, centered, filling 85% of the frame width, without cropping. No labels, price, typography, hang tags, watermark, extra props or body. Genuinely transparent background with clean alpha edges. Square image. Keep exact original colors and intended garment design.",
+      "referencePaths": [
+        "D:\\IP\\mio-miniprogram\\assets\\shop\\arcade-bottom.png",
+        "D:\\IP\\mio-miniprogram\\assets\\bayue-floral-cutout.png"
+      ]
+    },
+    {
+      "id": "brick-shoes",
+      "folder": "shop-v38",
+      "path": "D:\\IP\\mio-miniprogram\\assets\\shop-v38\\brick-shoes.png",
+      "prompt": "Use case: product-mockup, faithful premium material rendering. Image 1 is the existing flat garment design; use it as design reference only. Image 2 is the finished plush toy, use it as material, scale and finish reference. Render this exact toy accessory as a finished, premium three-dimensional studio catalog product, not a flat illustration: A matched pair of miniature terracotta brick-red slide slippers for a plush toy. Open toes, broad curved uppers with cream ocean wave motifs, rounded cream soles, opening and inner soles visible. Soft matte vinyl with realistic surface detail, no toy feet inside. Front three-quarter view with very slight tilt so the full product silhouette is clear. High-quality woven fabric, tiny seams, consistent lighting, subtle self-shadowing, softly rounded toy-scale construction. The whole product must fit comfortably, centered, filling 85% of the frame width, without cropping. No labels, price, typography, hang tags, watermark, extra props or body. Genuinely transparent background with clean alpha edges. Square image. Keep exact original colors and intended garment design.",
+      "referencePaths": [
+        "D:\\IP\\mio-miniprogram\\assets\\shop\\brick-shoes.png",
+        "D:\\IP\\mio-miniprogram\\assets\\bayue-floral-cutout.png"
+      ]
+    },
+    {
+      "id": "flower-head",
+      "folder": "shop-v38",
+      "path": "D:\\IP\\mio-miniprogram\\assets\\shop-v38\\flower-head.png",
+      "prompt": "Use case: product-mockup, faithful premium material rendering. Image 1 is the existing flat garment design; use it as design reference only. Image 2 is the finished plush toy, use it as material, scale and finish reference. Render this exact toy accessory as a finished, premium three-dimensional studio catalog product, not a flat illustration: The complete closed circular removable Quanzhou flower crown from the plush reference, shown as a real toy accessory. Colorful fabric flowers all around a padded closed circular base: dominant red flower, yellow, pink, teal-blue, tiny cream flowers and muted green leaves. Soft felt fabric petals, embroidery details and concealed attachment; no head or hair or doll. Show that it is a full ring rather than just a flat front row. Front three-quarter view with very slight tilt so the full product silhouette is clear. High-quality woven fabric, tiny seams, consistent lighting, subtle self-shadowing, softly rounded toy-scale construction. The whole product must fit comfortably, centered, filling 85% of the frame width, without cropping. No labels, price, typography, hang tags, watermark, extra props or body. Genuinely transparent background with clean alpha edges. Square image. Keep exact original colors and intended garment design.",
+      "referencePaths": [
+        "D:\\IP\\mio-miniprogram\\assets\\shop\\flower-head.png",
+        "D:\\IP\\mio-miniprogram\\assets\\bayue-floral-cutout.png"
+      ]
+    },
+    {
+      "id": "work-top",
+      "folder": "shop-v38",
+      "path": "D:\\IP\\mio-miniprogram\\assets\\shop-v38\\work-top.png",
+      "prompt": "Use case: product-mockup, faithful premium material rendering. Image 1 is the existing flat garment design; use it as design reference only. Image 2 is the finished plush toy, use it as material, scale and finish reference. Render this exact toy accessory as a finished, premium three-dimensional studio catalog product, not a flat illustration: Terracotta/rust red short-sleeve toy chore jacket with cream center placket and collar trim, three small warm ivory buttons, asymmetrical cream lower pocket on viewer-left, cream chest patch embroidered with rust-red sailboat and teal waves on viewer-right. Preserve the exact existing silhouette and blocking. Front three-quarter view with very slight tilt so the full product silhouette is clear. High-quality woven fabric, tiny seams, consistent lighting, subtle self-shadowing, softly rounded toy-scale construction. The whole product must fit comfortably, centered, filling 85% of the frame width, without cropping. No labels, price, typography, hang tags, watermark, extra props or body. Genuinely transparent background with clean alpha edges. Square image. Keep exact original colors and intended garment design.",
+      "referencePaths": [
+        "D:\\IP\\mio-miniprogram\\assets\\shop\\work-top.png",
+        "D:\\IP\\mio-miniprogram\\assets\\bayue-floral-cutout.png"
+      ]
+    },
+    {
+      "id": "hat-head",
+      "folder": "shop-v38",
+      "path": "D:\\IP\\mio-miniprogram\\assets\\shop-v38\\hat-head.png",
+      "prompt": "Use case: product-mockup, faithful premium material rendering. Image 1 is the existing flat garment design; use it as design reference only. Image 2 is the finished plush toy, use it as material, scale and finish reference. Render this exact toy accessory as a finished, premium three-dimensional studio catalog product, not a flat illustration: A miniature deep teal soft brim bucket hat for the plush reference, cream ribbon band, small embroidered rust sailboat and teal waves on front. Cotton twill texture, tidy topstitching, gently curved full brim, realistic soft volume. No doll inside. Front three-quarter view with very slight tilt so the full product silhouette is clear. High-quality woven fabric, tiny seams, consistent lighting, subtle self-shadowing, softly rounded toy-scale construction. The whole product must fit comfortably, centered, filling 85% of the frame width, without cropping. No labels, price, typography, hang tags, watermark, extra props or body. Genuinely transparent background with clean alpha edges. Square image. Keep exact original colors and intended garment design.",
+      "referencePaths": [
+        "D:\\IP\\mio-miniprogram\\assets\\shop\\hat-head.png",
+        "D:\\IP\\mio-miniprogram\\assets\\bayue-floral-cutout.png"
+      ]
+    },
+    {
+      "id": "silk-outfit",
+      "folder": "shop-v38",
+      "path": "D:\\IP\\mio-miniprogram\\assets\\shop-v38\\silk-outfit.png",
+      "prompt": "Use case: product-mockup, faithful premium material rendering. Image 1 is the existing flat garment design; use it as design reference only. Image 2 is the finished plush toy, use it as material, scale and finish reference. Render this exact toy accessory as a finished, premium three-dimensional studio catalog product, not a flat illustration: A coherent complete miniature outfit set laid out in a tasteful flat lay: ivory cross-over short-sleeve shirt with deep teal sash, rust sailboat embroidery patch and fine terracotta stitches; indigo denim shorts with warm contrast topstitch; pair of teal ocean-wave slide slippers with ivory soles; complete circular multicolor Quanzhou fabric flower crown. Exactly these four pieces, no doll. Material quality matches the real plush reference. Front three-quarter view with very slight tilt so the full product silhouette is clear. High-quality woven fabric, tiny seams, consistent lighting, subtle self-shadowing, softly rounded toy-scale construction. The whole product must fit comfortably, centered, filling 85% of the frame width, without cropping. No labels, price, typography, hang tags, watermark, extra props or body. Genuinely transparent background with clean alpha edges. Square image. Keep exact original colors and intended garment design.",
+      "referencePaths": [
+        "D:\\IP\\mio-miniprogram\\assets\\shop\\silk-outfit.png",
+        "D:\\IP\\mio-miniprogram\\assets\\bayue-floral-cutout.png"
+      ]
+    },
+    {
+      "id": "work",
+      "folder": "wardrobe-v38",
+      "path": "D:\\IP\\mio-miniprogram\\assets\\wardrobe-v38\\work.png",
+      "prompt": "Use case: identity-preserve, precise wardrobe edit. First image is the exact plush toy identity and pose to preserve. Second image is the garment design reference, turn its flat schematic into realistic miniature fabric clothing. Change the outfit only: the cream and teal shirt is replaced with the terracotta chore jacket from the second reference, with cream placket, small ivory buttons and cream embroidered chest patch; replace shorts with dark indigo wide-leg toy trousers; replace teal slippers with brick red wave slide slippers. Keep the multicolor circular floral crown. Preserve the exact toy face, amber eyes, golden cheek stitch, asymmetrical smile, floppy ears, grey fur, ivory hands and feet, standing pose, scale and top keyring. Finished studio-quality premium toy render: visible twill/denim weave, tiny real stitches and seams, believable fabric thickness and soft folds, embroidered motifs, soft matte shoe materials. Do not change the face, body proportions or crown. Full body portrait 2:3 with entire keyring and feet inside, centered, same framing as the first image. Genuinely transparent background. No captions, prices, labels, typography, props or watermark.",
+      "referencePaths": [
+        "D:\\IP\\mio-miniprogram\\assets\\bayue-floral-cutout.png",
+        "D:\\IP\\mio-miniprogram\\assets\\shop\\work-top.png"
+      ]
+    },
+    {
+      "id": "base",
+      "folder": "wardrobe-v38",
+      "path": "D:\\IP\\mio-miniprogram\\assets\\wardrobe-v38\\base.png",
+      "prompt": "Use case: identity-preserve. Edit the reference plush into a premium studio render of its bare base toy body, removing only the shirt, shorts, flower crown and slippers. This is an unclothed PLUSH TOY, not a human. Preserve precisely the same face, amber eyes, cheek gold moonlight stitch, mischievous asymmetrical smile, long floppy ears, warm light grey plush, cream tummy, proportions, front-facing standing pose, and top keyring with deep teal hanging strap. Hands and feet remain softly rounded ivory vinyl as in the reference. Do not introduce anatomy or joints or fingers. Same full-body front view and framing as the reference, all keyring and feet included, centered. Soft realistic plush fibers, controlled premium toy photography, genuine transparent background. Portrait 2:3 aspect ratio, same framing as reference. No text except existing tiny strap detail, no additional props.",
+      "referencePaths": [
+        "D:\\IP\\mio-miniprogram\\assets\\bayue-floral-cutout.png"
+      ]
+    },
+    {
+      "id": "arcade",
+      "folder": "wardrobe-v38",
+      "path": "D:\\IP\\mio-miniprogram\\assets\\wardrobe-v38\\arcade.png",
+      "prompt": "Use case: identity-preserve, precise wardrobe edit. First image is the exact plush toy identity and pose to preserve. Second image is the garment design reference, turn its flat schematic into realistic miniature fabric clothing. Change the outfit only: the cream shirt is replaced with the deep teal varsity jacket with ivory sleeves, terracotta-and-cream ribbed collar/hem and sailboat chest embroidery from the second reference; replace shorts with sand beige toy cargo shorts; replace teal slippers with brick-red wave slide slippers. Keep the multicolor circular floral crown. Preserve the exact toy face, amber eyes, golden cheek stitch, asymmetrical smile, floppy ears, grey fur, ivory hands and feet, standing pose, scale and top keyring. Finished studio-quality premium toy render: visible twill/denim weave, tiny real stitches and seams, believable fabric thickness and soft folds, embroidered motifs, soft matte shoe materials. Do not change the face, body proportions or crown. Full body portrait 2:3 with entire keyring and feet inside, centered, same framing as the first image. Genuinely transparent background. No captions, prices, labels, typography, props or watermark.",
+      "referencePaths": [
+        "D:\\IP\\mio-miniprogram\\assets\\bayue-floral-cutout.png",
+        "D:\\IP\\mio-miniprogram\\assets\\shop\\arcade-top.png"
+      ]
+    },
+    {
+      "id": "work-bottom",
+      "path": "D:\\IP\\mio-miniprogram\\assets\\shop-v38\\work-bottom.png",
+      "prompt": "Use case: product-mockup, faithful premium material rendering. First image is the exact miniature garment design reference; second is the finished plush identity/material reference. Render the dark indigo wide-legged LONG trousers for this 15cm plush toy as a finished studio product: long wide legs, high tiny elastic waistband, warm beige double topstitching, subtle realistic denim cotton weave, softly padded miniature toy-scale proportions. Keep exact dark indigo hue and silhouette. Not shorts. No toy, no feet, no extra props. Centered entire trousers filling 80% of a square frame, no clipping. Realistic fabric thickness, seams and soft self-shadowing. Genuinely transparent background. No text, labels or watermark.",
+      "referencePaths": [
+        "D:/IP/mio-miniprogram/assets/wardrobe/work-bottom-thumb.png",
+        "D:/IP/mio-miniprogram/assets/bayue-floral-cutout.png"
+      ]
+    },
+    {
+      "id": "work-v2",
+      "path": "D:\\IP\\mio-miniprogram\\assets\\wardrobe-v38\\work-v2.png",
+      "prompt": "Use case: precise-object-edit. Edit ONLY the dark indigo trousers in this exact finished plush render. They currently look like shorts. Extend both dark indigo denim trouser legs downward into full-length wide-leg trousers whose hems reach the top of the brick-red slippers, fully covering the grey plush shins. Keep wide relaxed legs, warm beige double seam stitches, same indigo denim fabric and simple cuffs. Do not change the toy face, eyes, smile, cheek stitch, grey fur, floral crown, ears, ring, strap, terracotta jacket, arms, hands or red slippers. Preserve every other pixel/design and the overall front-view framing. Genuine transparent background, portrait 2:3 canvas. No new props or labels.",
+      "referencePaths": [
+        "D:/IP/mio-miniprogram/assets/wardrobe-v38/work.png"
+      ]
+    }
+  ]
+}

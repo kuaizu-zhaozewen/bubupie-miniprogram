@@ -1,0 +1,110 @@
+{
+  "version": "proposal-v3.7",
+  "server": {
+    "timezone": "Asia/Shanghai",
+    "publicBaseUrl": "",
+    "wechatAppId": "",
+    "wechatAppSecretEnv": "WECHAT_APP_SECRET"
+  },
+  "legacyFortune": {
+    "baseUrl": "",
+    "credentialEnv": "LEGACY_FORTUNE_TOKEN",
+    "timeoutMs": 3000,
+    "parameterMap": {
+      "ipCalculationProfile": "PENDING_OLD_BUSINESS_CONTRACT"
+    }
+  },
+  "content": {
+    "cacheKey": "ipId:date:contentVersion",
+    "publishRequiresReview": true
+  },
+  "nfc": {
+    "entryPage": "pages/card/index",
+    "publicTokenParam": "tagToken",
+    "bindCodeOnPublicTag": false
+  },
+  "adoption": {
+    "maxAccountsPerProduct": 1,
+    "redeemRequiresLogin": true
+  },
+  "coupon": {
+    "campaignId": null,
+    "faceValue": null,
+    "minSpend": null,
+    "validDays": null,
+    "monthTimezone": "Asia/Shanghai",
+    "uniqueClaimKey": [
+      "accountId",
+      "campaignId",
+      "year"
+    ]
+  },
+  "chat": {
+    "model": null,
+    "systemPromptVersion": "wan-yue-v1",
+    "maxOutputTokens": 300,
+    "maxHistoryMessages": 12,
+    "requestsPerMinute": 5,
+    "dailyTokenBudget": null,
+    "quickPrompts": [
+      "fortune",
+      "color",
+      "feeling"
+    ],
+    "contextKey": "ipId:Asia/Shanghai-date:contentVersion"
+  },
+  "notes": "示例参数；模型、券值、业务接口、账号名额均需团队确认。密钥只放服务端，不能复制到小程序。",
+  "distribution": {
+    "commissionRateBps": 2000,
+    "commissionBase": "original_merchandise",
+    "couponExpense": "platform",
+    "attribution": "last_valid_keyword_search",
+    "lockAt": "order_created",
+    "settleAfter": "received_and_after_sale_closed",
+    "refund": "reverse_original_merchandise_commission"
+  },
+  "mall": {
+    "enabled": false,
+    "paymentEnabled": false,
+    "qrTarget": "pages/shop/index",
+    "scene": "opaque_server_token",
+    "entry": "keyword_search",
+    "keywordExamples": [
+      "海风小店",
+      "巷口伙伴",
+      "湾月好礼"
+    ],
+    "legacySceneCompatibility": true,
+    "qrUiEnabled": false
+  },
+  "promotionCoupon": {
+    "faceValueExamplesFen": [
+      500,
+      1000
+    ],
+    "minSpendFen": 0,
+    "scope": "all_merchandise",
+    "expires": "claim_day_end_Asia/Shanghai",
+    "dailyClaimKey": [
+      "accountId",
+      "promotion_coupon_family",
+      "date"
+    ],
+    "enabled": false
+  },
+  "navigation": {
+    "primaryTabs": [
+      "home",
+      "shop",
+      "bag",
+      "profile"
+    ],
+    "secondaryShop": "pages/shop-entry/index",
+    "recommendationFields": [
+      "category",
+      "product"
+    ],
+    "primaryNavigation": "switchTab",
+    "secondaryNavigation": "navigateTo"
+  }
+}

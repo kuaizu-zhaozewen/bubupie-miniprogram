@@ -1,0 +1,137 @@
+[
+  {
+    "code": "BUBU-DEMO-SILK-001",
+    "name": "首发衣装套组",
+    "pieces": [
+      "silk-top",
+      "silk-bottom",
+      "teal-shoes",
+      "flower-head"
+    ],
+    "payload": "BUBUPIE:WARDROBE:BUBU-DEMO-SILK-001",
+    "qr": "assets/wardrobe/qr/BUBU-DEMO-SILK-001.png"
+  },
+  {
+    "code": "BUBU-DEMO-WORK-001",
+    "name": "海湾工装套组",
+    "pieces": [
+      "work-top",
+      "work-bottom",
+      "brick-shoes",
+      "flower-head"
+    ],
+    "payload": "BUBUPIE:WARDROBE:BUBU-DEMO-WORK-001",
+    "qr": "assets/wardrobe/qr/BUBU-DEMO-WORK-001.png"
+  },
+  {
+    "code": "BUBU-DEMO-ARCADE-001",
+    "name": "骑楼漫游套组",
+    "pieces": [
+      "arcade-top",
+      "arcade-bottom",
+      "brick-shoes",
+      "flower-head"
+    ],
+    "payload": "BUBUPIE:WARDROBE:BUBU-DEMO-ARCADE-001",
+    "qr": "assets/wardrobe/qr/BUBU-DEMO-ARCADE-001.png"
+  },
+  {
+    "code": "BUBU-DEMO-HAT-001",
+    "name": "软檐帽接口示例",
+    "pieces": [
+      "hat-head"
+    ],
+    "payload": "BUBUPIE:WARDROBE:BUBU-DEMO-HAT-001",
+    "qr": "assets/wardrobe/qr/BUBU-DEMO-HAT-001.png"
+  },
+  {
+    "code": "BUBU-DEMO-PIECE-01",
+    "name": "海丝斜襟短衫",
+    "pieces": [
+      "silk-top"
+    ],
+    "payload": "BUBUPIE:WARDROBE:BUBU-DEMO-PIECE-01",
+    "qr": "assets/wardrobe/qr/BUBU-DEMO-PIECE-01.png"
+  },
+  {
+    "code": "BUBU-DEMO-PIECE-02",
+    "name": "海湾工装短外套",
+    "pieces": [
+      "work-top"
+    ],
+    "payload": "BUBUPIE:WARDROBE:BUBU-DEMO-PIECE-02",
+    "qr": "assets/wardrobe/qr/BUBU-DEMO-PIECE-02.png"
+  },
+  {
+    "code": "BUBU-DEMO-PIECE-03",
+    "name": "骑楼拼色棒球服",
+    "pieces": [
+      "arcade-top"
+    ],
+    "payload": "BUBUPIE:WARDROBE:BUBU-DEMO-PIECE-03",
+    "qr": "assets/wardrobe/qr/BUBU-DEMO-PIECE-03.png"
+  },
+  {
+    "code": "BUBU-DEMO-PIECE-04",
+    "name": "靛蓝宽松短裤",
+    "pieces": [
+      "silk-bottom"
+    ],
+    "payload": "BUBUPIE:WARDROBE:BUBU-DEMO-PIECE-04",
+    "qr": "assets/wardrobe/qr/BUBU-DEMO-PIECE-04.png"
+  },
+  {
+    "code": "BUBU-DEMO-PIECE-05",
+    "name": "深靛宽腿裤",
+    "pieces": [
+      "work-bottom"
+    ],
+    "payload": "BUBUPIE:WARDROBE:BUBU-DEMO-PIECE-05",
+    "qr": "assets/wardrobe/qr/BUBU-DEMO-PIECE-05.png"
+  },
+  {
+    "code": "BUBU-DEMO-PIECE-06",
+    "name": "沙色工装短裤",
+    "pieces": [
+      "arcade-bottom"
+    ],
+    "payload": "BUBUPIE:WARDROBE:BUBU-DEMO-PIECE-06",
+    "qr": "assets/wardrobe/qr/BUBU-DEMO-PIECE-06.png"
+  },
+  {
+    "code": "BUBU-DEMO-PIECE-07",
+    "name": "海浪青拖鞋",
+    "pieces": [
+      "teal-shoes"
+    ],
+    "payload": "BUBUPIE:WARDROBE:BUBU-DEMO-PIECE-07",
+    "qr": "assets/wardrobe/qr/BUBU-DEMO-PIECE-07.png"
+  },
+  {
+    "code": "BUBU-DEMO-PIECE-08",
+    "name": "砖红海浪拖鞋",
+    "pieces": [
+      "brick-shoes"
+    ],
+    "payload": "BUBUPIE:WARDROBE:BUBU-DEMO-PIECE-08",
+    "qr": "assets/wardrobe/qr/BUBU-DEMO-PIECE-08.png"
+  },
+  {
+    "code": "BUBU-DEMO-PIECE-09",
+    "name": "整圈磁吸簪花",
+    "pieces": [
+      "flower-head"
+    ],
+    "payload": "BUBUPIE:WARDROBE:BUBU-DEMO-PIECE-09",
+    "qr": "assets/wardrobe/qr/BUBU-DEMO-PIECE-09.png"
+  },
+  {
+    "code": "BUBU-DEMO-PIECE-10",
+    "name": "海风软檐帽",
+    "pieces": [
+      "hat-head"
+    ],
+    "payload": "BUBUPIE:WARDROBE:BUBU-DEMO-PIECE-10",
+    "qr": "assets/wardrobe/qr/BUBU-DEMO-PIECE-10.png"
+  }
+]

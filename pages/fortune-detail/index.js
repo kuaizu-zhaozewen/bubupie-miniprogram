@@ -1,0 +1,3 @@
+const config = require('../../utils/config');
+const { getDaily, isAdopted } = require('../../utils/daily');
+Page({ data: { date: '', daily: {} }, onLoad(options) { const id = options.id === 'star' ? options.id : 'star'; const testing = config.enableDemoTools && options.demo === '1' && options.role === 'owner'; if (!testing && !isAdopted(id)) { wx.redirectTo({ url: '/pages/card/index?id=' + id }); return; } const daily = getDaily(id, testing ? options.mood : ''); this.setData({ date: daily.date, daily }); }, onShareAppMessage() { return { title: '湾月给我的一句话', path: '/pages/card/index?id=star' }; } });

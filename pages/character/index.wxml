@@ -1,0 +1,5 @@
+<view class="page character-page"><view class="content character">
+  <view class="character-heading"><view><text class="eyebrow">MY WARDROBE</text><view class="title name">{{item.name}}的衣橱</view></view><view class="character-description"><text>换个穿法，还是{{item.name}}。</text><text>点选衣装，即刻换上</text></view></view>
+  <view class="hero"><image wx:if="{{item.id === 'star' ? quanzhouScene : false}}" class="gucuo-lines" src="/assets/quanzhou-gucuo-lines.png" mode="aspectFit" aria-hidden="true" /><view wx:if="{{item.id === 'star'}}" class="hero-shadow"></view><dress-avatar wx:if="{{hasDress}}" class="hero-image" layers="{{layers}}" /><image wx:else src="{{item.image}}" mode="aspectFit" class="hero-image" /><text class="hero-caption">{{hasDress ? '我的搭配 · 已自动保存' : '海丝簪花漫游 · 首发造型'}}</text></view>
+  <include src="../wardrobe/controls.wxml" />
+</view></view>

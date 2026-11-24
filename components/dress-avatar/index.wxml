@@ -1,0 +1,1 @@
+<view class="avatar-stage"><image wx:if="{{renderImage}}" class="avatar-layer avatar-render" src="{{renderImage}}" mode="aspectFit" /><block wx:else><image class="avatar-layer" src="/assets/wardrobe-v38/layers/base.png" mode="aspectFit" /><image class="avatar-layer" wx:for="{{layers}}" wx:key="id" src="{{item.image}}" mode="aspectFit" /></block></view>

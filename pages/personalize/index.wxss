@@ -1,0 +1,1 @@
+.personalize { padding-top: 75rpx; }.intro { margin-top: 22rpx; }.field { margin-top: 66rpx; }.date-input { display: flex; align-items: center; }.note { margin-top: 60rpx; }.save { margin-top: 115rpx; }.skip { margin-top: 56rpx; color: #808082; font-size: 25rpx; }

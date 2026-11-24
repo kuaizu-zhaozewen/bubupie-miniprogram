@@ -1,0 +1,32 @@
+const fs=require('fs'),path=require('path'),assert=require('assert'),{createRequire}=require('module');
+const bundled=createRequire('C:/Program Files/WindowsApps/OpenAI.CodexPrimaryRuntime.v26-1119-907-0_26.1119.907.0_x64__3k8sg7r9htsxt/dependencies/node/node_modules/_.js');
+const {chromium}=bundled('playwright');
+const out=path.resolve(__dirname,'../../工作成果/详情建议与衣装精修V3.8');
+(async()=>{
+ const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+ const context=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:2});const page=await context.newPage();const errors=[];
+ page.on('pageerror',error=>errors.push(error.message));page.on('dialog',dialog=>dialog.accept());
+ await page.goto('file:///'+path.resolve(__dirname,'../docs/换装交互预览.html').replace(/\\/g,'/')+'?page=character');
+ await page.waitForFunction(()=>window.demo&&window.demo.page.data.rows.length>0);
+ await page.evaluate(()=>{localStorage.clear();demo.page.refresh();});
+ await page.screenshot({path:path.join(out,'Demo-01-未绑定衣橱.png'),fullPage:true});
+ await page.getByRole('button',{name:'绑定新衣装 ＋',exact:true}).click();await page.getByPlaceholder('或输入衣装绑定码').fill('BUBU-DEMO-SILK-001');await page.getByRole('button',{name:'绑定',exact:true}).click();
+ assert.equal(await page.evaluate(()=>demo.wardrobe.snapshot().owned.length),4);
+ await page.getByRole('button',{name:'海丝簪花漫游 首发 · 一键穿戴'}).click();
+ await page.evaluate(()=>document.getElementById('toast').hidden=true);await page.screenshot({path:path.join(out,'Demo-02-首发整套搭配.png'),fullPage:true});
+ for(const code of ['BUBU-DEMO-WORK-001','BUBU-DEMO-ARCADE-001','BUBU-DEMO-HAT-001']){await page.getByPlaceholder('或输入衣装绑定码').fill(code);await page.getByRole('button',{name:'绑定',exact:true}).click();}
+ await page.locator('.piece').filter({hasText:'海湾工装短外套'}).click();
+ await page.getByRole('button',{name:'下装',exact:true}).click();await page.getByRole('button',{name:'骑楼漫游套组',exact:true}).count();
+ await page.locator('.piece').filter({hasText:'沙色工装短裤'}).click();
+ await page.getByRole('button',{name:'头饰',exact:true}).click();await page.locator('.piece').filter({hasText:'海风软檐帽'}).click();
+ const look=await page.evaluate(()=>demo.wardrobe.snapshot().look);assert.deepStrictEqual(look,{top:'work-top',bottom:'arcade-bottom',shoes:'teal-shoes',head:'hat-head'});
+ await page.evaluate(()=>document.getElementById('toast').hidden=true);await page.screenshot({path:path.join(out,'Demo-03-跨款混搭.png'),fullPage:true});
+ await page.reload();await page.waitForFunction(()=>window.demo&&demo.page.data.layers.length===4);assert.deepStrictEqual(await page.evaluate(()=>demo.wardrobe.snapshot().look),look);
+ await page.getByRole('button',{name:'绑定新衣装 ＋',exact:true}).click();await page.getByRole('button',{name:'展开演示工具 ›',exact:true}).click();await page.getByRole('button',{name:'演示账号 B',exact:true}).click();await page.getByPlaceholder('或输入衣装绑定码').fill('BUBU-DEMO-SILK-001');await page.getByRole('button',{name:'绑定',exact:true}).click();assert.equal(await page.evaluate(()=>demo.wardrobe.snapshot().owned.length),0);
+ await page.getByRole('button',{name:'查看套装 / 单件演示二维码 ›'}).click();await page.screenshot({path:path.join(out,'Demo-04-单件二维码与绑定工具.png'),fullPage:true});
+ const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);assert(!overflow,'mobile horizontal overflow');
+ const broken=await page.locator('img').evaluateAll(images=>images.filter(im=>!im.complete||im.naturalWidth===0).map(im=>im.src));assert.equal(broken.length,0,broken.join('\n'));
+ assert.deepStrictEqual(errors,[]);
+ fs.writeFileSync(path.join(out,'浏览器交互检查.json'),JSON.stringify({passed:true,view:'390x844 @2x',source:'actual WXML/WXSS + Page methods in browser harness',verified:['bind confirmation','outfit wear','cross-style mixing','reload persistence','cross-account denial','QR images','no horizontal overflow'],limitations:'Not a WeChat compiler or device test.'},null,2));
+ await browser.close();console.log('OK: actual template browser interaction, QR binding, cross-style mix, reload, account isolation, 4 screenshots; no console/image/overflow errors.');
+})().catch(error=>{console.error(error);process.exitCode=1;});
