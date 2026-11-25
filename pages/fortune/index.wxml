@@ -1,5 +1,5 @@
 <view class="page"><view class="content fortune">
-  <view class="meta row"><text>{{date}}</text><text class="daily-label">今日陪伴</text></view>
+  <view wx:if="{{instanceNumber}}" class="serial-label">{{instanceNumber}} · 我的伙伴</view><view class="meta row"><text>{{date}}</text><text class="daily-label">今日陪伴</text></view>
   <button class="character-stage" bindtap="dress" aria-label="点击{{item.name}}形象换装"><view class="stage-halo"></view><image wx:if="{{item.id === 'star' ? quanzhouScene : false}}" class="fortune-scenery" src="/assets/quanzhou-gucuo-lines.png" mode="aspectFit" aria-hidden="true" /><dress-avatar wx:if="{{hasDress}}" class="daily-character" layers="{{dressLayers}}" /><image wx:else class="daily-character" src="{{item.image}}" mode="aspectFit" /><view class="stage-caption">{{item.name}} · {{item.birthday || '生日待公布'}}</view><text class="stage-hint">点击形象，给{{item.name}}换装</text></button>
   <view class="greeting surface"><text class="greeting-title">{{daily.label}}</text><text class="greeting-copy">{{daily.action}}</text></view>
   <view class="suggestion-heading">给{{item.name}}的小建议</view>

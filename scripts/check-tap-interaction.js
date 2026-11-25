@@ -42,6 +42,7 @@ function environment(initialStage = 'ok') {
         getDaily: (id, mood) => ({ id: 'today', date: 'today', mood: mood || 'low', color: '#eee', quote: mood === 'high' ? '走呀' : '好好吃饭', action: '慢慢来' })
       };
       if (name.endsWith('/share')) return share;
+      if (name.endsWith('/instances')) return { findTag: () => null, owned: () => false };
       if (name.endsWith('/navigation')) return require('../utils/navigation');
       if (name.endsWith('/recommendations')) return require('../utils/recommendations');
       throw new Error(name);

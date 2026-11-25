@@ -10,12 +10,12 @@ function stylesheet(file) {
 function template(file) {
   return read(file).replace(/<include\s+src="([^"]+)"\s*\/>/g, (_, target) => template(path.join(path.dirname(file), target))).replace(/\bwx:else(?=\s|\/|>)/g, 'wx:else="true"');
 }
-const css = stylesheet('app.wxss') + ['home', 'fortune', 'character', 'shop', 'distributor', 'chat', 'product', 'bag', 'coupons', 'profile', 'shop-entry', 'edit-profile'].map(name => '\n@scope (.preview-route-' + name + ') {\n' + stylesheet('pages/' + name + '/index.wxss') + '\n}').join('') + stylesheet('components/dress-avatar/index.wxss');
+const css = stylesheet('app.wxss') + ['home', 'fortune', 'character', 'shop', 'distributor', 'chat', 'product', 'bag', 'coupons', 'profile', 'shop-entry', 'edit-profile', 'card', 'bind'].map(name => '\n@scope (.preview-route-' + name + ') {\n' + stylesheet('pages/' + name + '/index.wxss') + '\n}').join('') + stylesheet('components/dress-avatar/index.wxss');
 const transformed = css.replace(/(\d+(?:\.\d+)?)rpx/g, (_, n) => Number(n) / 2 + 'px').replace(/(^|[\s,}])page\s*\{/gm, '$1body {').replace(/:host\s*\{[^}]*\}/g, '').replace(/(^|[\s,>])(view|text|image)(?=[\s,{.:#>])/gm, (_, prefix, tag) => prefix + ({ view: 'div', text: 'span', image: 'img' }[tag]));
 const modules = {};
-for (const name of ['config', 'data', 'daily', 'wardrobe', 'wardrobe-view', 'scenery', 'commerce', 'chat-prompts', 'catalog', 'navigation', 'recommendations', 'shop-page', 'avatar-presentation']) modules['../../utils/' + name] = read('utils/' + name + '.js');
+for (const name of ['config', 'data', 'daily', 'wardrobe', 'wardrobe-view', 'scenery', 'commerce', 'chat-prompts', 'catalog', 'navigation', 'recommendations', 'shop-page', 'avatar-presentation', 'instances', 'share']) modules['../../utils/' + name] = read('utils/' + name + '.js');
 const pages = {};
-for (const name of ['home', 'fortune', 'character', 'shop', 'distributor', 'chat', 'product', 'bag', 'coupons', 'profile', 'shop-entry', 'edit-profile']) pages[name] = { source: read('pages/' + name + '/index.js'), template: template('pages/' + name + '/index.wxml'), config: JSON.parse(read('pages/' + name + '/index.json')) };
+for (const name of ['home', 'fortune', 'character', 'shop', 'distributor', 'chat', 'product', 'bag', 'coupons', 'profile', 'shop-entry', 'edit-profile', 'card', 'bind']) pages[name] = { source: read('pages/' + name + '/index.js'), template: template('pages/' + name + '/index.wxml'), config: JSON.parse(read('pages/' + name + '/index.json')) };
 const appConfiguration = JSON.parse(read('app.json'));
 const avatar = template('components/dress-avatar/index.wxml');
 const html = `<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>布布小伴 · 伙伴与好物</title><style>${transformed}

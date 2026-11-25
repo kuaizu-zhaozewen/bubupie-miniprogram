@@ -1,1 +1,3 @@
 .bind { padding-top: 75rpx; }.intro { margin-top: 24rpx; }.scan-card { margin: 90rpx 0 72rpx; height: 500rpx; display: flex; flex-direction: column; align-items: center; justify-content: center; }.scan-mark { font-size: 130rpx; line-height: 1; }.scan-label { font-weight: 700; font-size: 26rpx; margin-top: 72rpx; }.code-label { color: #808082; font-size: 23rpx; margin: 48rpx 0 20rpx; }.code-row { display: flex; gap: 16rpx; }.code-input { flex: 1; }.code-button { padding: 0 35rpx; background: white; border-radius: 22rpx; font-size: 25rpx; }.help { color: #808082; font-size: 22rpx; text-align: center; margin-top: 60rpx; }
+
+.identity-card { margin:25rpx 0; padding:28rpx; text-align:center; color:#817970; font-size:23rpx; }

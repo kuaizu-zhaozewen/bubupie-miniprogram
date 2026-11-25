@@ -47,6 +47,7 @@ assert.equal(page.data.totals.count, 0); assert(page.data.orders.length > 0); as
 console.log('OK: Shanghai midnight, one daily coupon across agents, original-price 20%, coupon cap, last-agent attribution, locked history, idempotency, settlement timing, refund reversal, buyer isolation, mock gating, 3 mood-aware prompts, birthday, checkout.');
 
 assert.equal(c.categories.length,4);assert(c.products.length >= 15);for(const p of c.products) assert(c.categories.some(cat=>cat.id===p.category));
-assert(c.coupons().some(x=>x.status==='used')); c.enter('湾月好礼',Date.now()-86400000);assert(c.coupons().some(x=>x.status==='expired'));
+// Use an isolated fixture day; yesterday may already contain a used coupon as calendar time advances.
+assert(c.coupons().some(x=>x.status==='used')); const past=t-86400000; c.enter('湾月好礼',past);assert(c.coupons(c.expiry(c.day(past))).some(x=>x.status==='expired'));
 c.switchBuyer();assert.deepEqual(c.cart(),{});c.setQuantity('cup',2);assert.equal(c.cart().cup,2);c.switchBuyer();assert.equal(c.cart().cup,undefined);
 console.log('OK: keyword search auto-claim, 15 products/4 categories, coupon used/expired status, persistent buyer-isolated bag.');

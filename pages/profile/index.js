@@ -1,5 +1,7 @@
+const config = require('../../utils/config');
 Page({
-  data: { nickname: '', birthday: '', birthdayMonth: false },
+  data: { nickname: '', birthday: '', birthdayMonth: false, demoTools: config.mode === 'mock' && config.enableDemoTools },
+  testTap() { wx.navigateTo({ url: '/pages/card/index?id=star&demo=1&tag=DEMO-TAG-0001' }); },
   onShow() { const p = wx.getStorageSync('mio_profile') || {}; this.setData({ nickname: p.nickname || '', birthday: p.birthday || '', birthdayMonth: !!p.birthday && Number(p.birthday.slice(5, 7)) === new Date().getMonth() + 1 }); },
   coupons() { wx.navigateTo({ url: '/pages/coupons/index' }); },
   edit() { wx.navigateTo({ url: '/pages/edit-profile/index' }); },

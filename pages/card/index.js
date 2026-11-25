@@ -2,9 +2,12 @@ const config = require('../../utils/config');
 const { items } = require('../../utils/data');
 const { getDaily, isAdopted } = require('../../utils/daily');
 const { renderShare } = require('../../utils/share');
+const instances = require('../../utils/instances');
 Page({
   data: { item: items.star, daily: {}, owner: false, testing: false, testRole: '', testMood: '', shareImage: '', timelineImage: '', poster: '', busy: false, posterBusy: false },
   onLoad(options) {
+    this.instance = options.tag ? instances.findTag(options.tag) : null;
+    this.setData({ instance: this.instance, identityError: !!options.tag && !this.instance });
     this.setData({ item: items[options.id] || items.star, testing: config.mode === 'mock' && config.enableDemoTools && options.demo === '1' });
     if (wx.showShareMenu) wx.showShareMenu({ menus: ['shareAppMessage', 'shareTimeline'] });
     this.refresh();
@@ -13,17 +16,18 @@ Page({
   onReady() { this.renderImages(); },
   onUnload() { this.unloaded = true; this.generation = (this.generation || 0) + 1; },
   refresh() {
-    const owner = this.data.testing && this.data.testRole ? this.data.testRole === 'owner' : isAdopted(this.data.item.id);
+    const owner = !this.data.identityError && (this.data.testing && this.data.testRole ? this.data.testRole === 'owner' : this.instance ? instances.owned(this.instance) : isAdopted(this.data.item.id));
     this.setData({ owner, daily: getDaily(this.data.item.id, this.data.testing ? this.data.testMood : '') });
   },
   setRole(e) { this.setData({ testRole: e.currentTarget.dataset.value }); this.refresh(); },
   setMood(e) { this.setData({ testMood: e.currentTarget.dataset.value }); this.refresh(); this.renderImages(); },
+  another(e) { wx.redirectTo({ url: '/pages/card/index?id=star&demo=1&tag=' + e.currentTarget.dataset.tag }); },
   fortune() {
     if (!this.data.owner) return this.bind();
     const demo = this.data.testing ? '&demo=1&role=owner&mood=' + this.data.daily.mood : '';
-    wx.navigateTo({ url: '/pages/fortune/index?id=' + this.data.item.id + demo });
+    wx.navigateTo({ url: '/pages/fortune/index?id=' + this.data.item.id + demo + (this.instance ? '&tag=' + this.instance.tag : '') });
   },
-  bind() { wx.navigateTo({ url: '/pages/bind/index' }); },
+  bind() { if (!this.data.identityError) wx.navigateTo({ url: '/pages/bind/index' + (this.instance ? '?tag=' + this.instance.tag : '') }); },
   async renderImages() {
     const generation = (this.generation || 0) + 1; this.generation = generation;
     this.setData({ shareImage: '', timelineImage: '', poster: '', busy: true });
@@ -58,6 +62,6 @@ Page({
   },
   previewPoster() { wx.previewImage({ urls: [this.data.poster] }); },
   timelineHelp() { wx.showModal({ title: '分享到朋友圈', content: '请点击右上角“…”再选择“分享到朋友圈”。也可以生成海报，打开图片菜单保存或分享。具体选项以微信客户端为准。', showCancel: false }); },
-  onShareAppMessage() { return { title: this.data.item.name + '给我的一句话：' + this.data.daily.quote.replace(/\n/g, ''), path: '/pages/card/index?id=' + this.data.item.id, imageUrl: this.data.shareImage || this.data.item.image }; },
-  onShareTimeline() { return { title: this.data.item.name + '给我的一句话', query: 'id=' + this.data.item.id, imageUrl: this.data.timelineImage || this.data.item.image }; }
+  onShareAppMessage() { return { title: this.data.item.name + '给我的一句话：' + this.data.daily.quote.replace(/\n/g, ''), path: '/pages/card/index?id=' + this.data.item.id + (this.instance ? '&tag=' + this.instance.tag : ''), imageUrl: this.data.shareImage || this.data.item.image }; },
+  onShareTimeline() { return { title: this.data.item.name + '给我的一句话', query: 'id=' + this.data.item.id + (this.instance ? '&tag=' + this.instance.tag : ''), imageUrl: this.data.timelineImage || this.data.item.image }; }
 });

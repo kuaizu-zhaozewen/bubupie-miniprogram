@@ -3,12 +3,15 @@ const { items, dateText } = require('../../utils/data');
 const { getDaily, isAdopted } = require('../../utils/daily');
 const navigation = require('../../utils/navigation');
 const { recommendations } = require('../../utils/recommendations');
+const instances = require('../../utils/instances');
 Page({
   data: { item: items.star, date: '', daily: {}, demoQuery: '', suggestions: [], dressLayers: [], hasDress: false, quanzhouScene: true, stats: [{ name: '情感', value: 76 }, { name: '财富', value: 68 }, { name: '事业', value: 82 }, { name: '健康', value: 74 }] },
   onLoad(options = {}) {
+    const instance = options.tag ? instances.findTag(options.tag) : instances.firstOwned();
+    this.setData({ instanceNumber: instance ? instance.number : '' });
     const item = items[options.id] || items.star;
     const testing = config.mode === 'mock' && config.enableDemoTools && options.demo === '1' && options.role === 'owner';
-    if (!testing && !isAdopted(item.id)) { wx.redirectTo({ url: '/pages/card/index?id=' + item.id }); return; }
+    if (!testing && (options.tag ? !instance || !instances.owned(instance) : instance ? !instances.owned(instance) : !isAdopted(item.id))) { wx.redirectTo({ url: '/pages/card/index?id=' + item.id + (options.tag ? '&tag=' + encodeURIComponent(options.tag) : '') }); return; }
     const daily = getDaily(item.id, testing ? options.mood : '');
     this.setData({ item, daily, date: dateText(), demoQuery: testing ? '&demo=1&role=owner&mood=' + daily.mood : '', stats: ['情感','财富','事业','健康'].map((name,i) => ({name,value:daily.score - 6 + i * 2})) });
     if (wx.setNavigationBarTitle) wx.setNavigationBarTitle({ title: item.name + '的今日运势' });
